@@ -1,0 +1,21 @@
+highreward_dev_database:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: root
+      password: "adsgfasdg"
+      port: 5433
+      dbname: dev_high_rewards
+      schema: dbt
+      sslmode: disable
+    prod:
+      type: postgres
+      host: localhost
+      user: root
+      password: "]e-9uXP#cW5X"
+      port: 5433
+      dbname: high_rewards
+      schema: dbt
+      sslmode: disable
