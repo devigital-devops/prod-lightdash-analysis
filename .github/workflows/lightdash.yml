@@ -23,8 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install dbt
         dbt --version
-        sudo apt install python3 python3-pip -y
-        pip install lightdash==0.1184.0
     - name: Set up SSH tunnel
       run: |
         mkdir -p ~/.ssh
