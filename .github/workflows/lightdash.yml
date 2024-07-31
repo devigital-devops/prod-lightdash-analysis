@@ -21,8 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install dbt==1.8.4
-        pip install lightdash==0.1184.0
+        pip install dbt
 
     - name: Set up SSH tunnel
       run: |
