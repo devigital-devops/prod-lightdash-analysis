@@ -32,6 +32,9 @@ jobs:
         pip install dbt-core
         pip install dbt-postgres
 
+    - name: Check Node.js version
+      run: node --version
+      
     - name: Set up SSH tunnel
       run: |
         mkdir -p ~/.ssh
