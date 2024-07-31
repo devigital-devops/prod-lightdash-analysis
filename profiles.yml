@@ -1,15 +1,6 @@
 highreward_dev_database:
   target: dev
   outputs:
-    dev:
-      type: postgres
-      host: high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com
-      user: root
-      password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
-      port: 5432
-      dbname: dev_high_rewards
-      schema: dbt
-      sslmode: disable
     prod:
       type: postgres
       host: high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com
