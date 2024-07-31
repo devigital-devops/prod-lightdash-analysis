@@ -19,7 +19,7 @@ jobs:
         python-version: '3.x'
     - name: Install Node.js and npm
       run: |
-        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+        curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
         sudo apt-get install -y nodejs
 
     - name: Install Lightdash CLI
@@ -38,12 +38,14 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -fN -L 5433:high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com:5432 ubuntu@52.87.194.221
+
     - name: Verify SSH Tunnel
       run: |
         # Wait for the tunnel to establish
         sleep 10
         # Check if the port is listening
         nc -zv localhost 5433 || echo "Failed to connect to SSH tunnel"
+    
     - name: Set up dbt profile
       run: |
         mkdir -p ~/.dbt
@@ -51,9 +53,16 @@ jobs:
 
     - name: Run dbt with prod target
       run:  dbt run --target prod
+
+    - name: Verify SSH Tunnel
+      run: |
+        sleep 10
+        nc -zv localhost 5433 || echo "Failed to connect to SSH tunnel"
       
     - name: Run lightdash with prod target
       run: lightdash generate -y
+    
+    
     - name: Generate Lightdash YAML files
       run: echo "yes" | lightdash generate --target prod
 
