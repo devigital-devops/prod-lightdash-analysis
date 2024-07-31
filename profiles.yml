@@ -3,7 +3,7 @@ highreward_dev_database:
   outputs:
     prod:
       type: postgres
-      host: 'high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com'
+      host: localhost
       user: root
       password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
       port: 5433
