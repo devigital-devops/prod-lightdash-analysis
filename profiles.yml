@@ -5,7 +5,7 @@ highreward_dev_database:
       type: postgres
       host: localhost
       user: root
-      password: "]e-9+FQvc>8HKtCRzN:!uXP#cW5X"
+      password: "xxxxxxxx"
       port: 5433
       dbname: dev_high_rewards
       schema: dbt
@@ -14,7 +14,7 @@ highreward_dev_database:
       type: postgres
       host: localhost
       user: root
-      password: "]e-9+FQvc>8HKtCRzN:!uXP#cW5X"
+      password: "xxxxxxxx"
       port: 5433
       dbname: high_rewards
       schema: dbt
