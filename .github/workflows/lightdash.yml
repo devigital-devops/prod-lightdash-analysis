@@ -31,7 +31,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install dbt-core
         pip install dbt-postgres
-#        pip install lightdash==0.1184.0
 
     - name: Set up SSH tunnel
       run: |
