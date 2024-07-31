@@ -1,17 +1,21 @@
 highreward_dev_database:
-  target: prod
+  target: dev
   outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: root
+      password: "]e-9+FQvc>8HKtCRzN:!uXP#cW5X"
+      port: 5433
+      dbname: dev_high_rewards
+      schema: dbt
+      sslmode: disable
     prod:
       type: postgres
       host: localhost
       user: root
-      password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
+      password: "]e-9+FQvc>8HKtCRzN:!uXP#cW5X"
       port: 5433
       dbname: high_rewards
       schema: dbt
       sslmode: disable
-      connect_timeout: 30  # Increase the connection timeout to 30 seconds
-      keepalives_idle: 60  # Set keepalives_idle to 60 seconds
-      keepalives_interval: 10  # Set keepalives_interval to 10 seconds
-      keepalives_count: 5  # Set keepalives_count to 5 retries
-      
