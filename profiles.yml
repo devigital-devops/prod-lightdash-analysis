@@ -12,10 +12,10 @@ highreward_dev_database:
       sslmode: disable
     prod:
       type: postgres
-      host: local
+      host: high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com
       user: root
       password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
-      port: 5432
+      port: 5433
       dbname: high_rewards
       schema: dbt
       sslmode: disable
