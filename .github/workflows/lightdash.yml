@@ -21,8 +21,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install dbt
-        dbt --version
+        pip install dbt==1.8.4
+        pip install lightdash==0.1184.0
+
     - name: Set up SSH tunnel
       run: |
         mkdir -p ~/.ssh
@@ -30,10 +31,10 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -fN -L 5433:high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com:5432 ubuntu@52.87.194.221
 
-    - name: Copy profiles.yml
+    - name: Set up dbt profile
       run: |
         mkdir -p ~/.dbt
-        cp ./profiles.yml ~/.dbt/profiles.yml
+        echo "${{ secrets.DBT_PROFILES_YML }}" > ~/.dbt/profiles.yml
 
     - name: Run dbt debug
       run: dbt debug
