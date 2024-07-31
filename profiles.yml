@@ -5,8 +5,8 @@ highreward_dev_database:
       type: postgres
       host: high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com
       user: root
-      password: '${{ secrets.DB_PASSWORD_DEV }}'
-      port: 5433
+      password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
+      port: 5432
       dbname: dev_high_rewards
       schema: dbt
       sslmode: disable
@@ -14,8 +14,8 @@ highreward_dev_database:
       type: postgres
       host: high-rewards-aurora-postgresql-reader.cjy248yiebxq.us-east-1.rds.amazonaws.com
       user: root
-      password: '${{ secrets.DB_PASSWORD_PROD }}'
-      port: 5433
+      password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
+      port: 5432
       dbname: high_rewards
       schema: dbt
       sslmode: disable
