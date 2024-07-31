@@ -55,7 +55,7 @@ jobs:
         echo "${{ secrets.DBT_PROFILES_YML }}" > ~/.dbt/profiles.yml
 
     - name: Run dbt with prod target
-      run:  dbt run 
+      run:  dbt run --target prod
 
     - name: Verify SSH Tunnel
       run: |
@@ -63,7 +63,7 @@ jobs:
         nc -zv localhost 5433 || echo "Failed to connect to SSH tunnel"
       
     - name: Run lightdash with prod target
-      run: lightdash generate -y
+      run: lightdash generate -y --target prod
 
     - name: Deploy Lightdash
       run: lightdash deploy --target prod
