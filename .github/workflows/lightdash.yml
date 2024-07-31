@@ -55,7 +55,7 @@ jobs:
         echo "${{ secrets.DBT_PROFILES_YML }}" > ~/.dbt/profiles.yml
 
     - name: Run dbt with prod target
-      run:  dbt run --target prod
+      run:  dbt run 
 
     - name: Verify SSH Tunnel
       run: |
@@ -64,10 +64,6 @@ jobs:
       
     - name: Run lightdash with prod target
       run: lightdash generate -y
-    
-    
-    - name: Generate Lightdash YAML files
-      run: echo "yes" | lightdash generate --target prod
 
     - name: Deploy Lightdash
       run: lightdash deploy --target prod
