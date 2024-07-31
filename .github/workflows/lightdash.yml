@@ -17,7 +17,15 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+    - name: Install Node.js and npm
+      run: |
+        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+        sudo apt-get install -y nodejs
 
+    - name: Install Lightdash CLI
+      run: |
+        npm install -g @lightdash/cli@latest
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
