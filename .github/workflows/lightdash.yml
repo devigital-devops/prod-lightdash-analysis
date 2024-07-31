@@ -36,8 +36,8 @@ jobs:
         mkdir -p ~/.dbt
         echo "${{ secrets.DBT_PROFILES_YML }}" > ~/.dbt/profiles.yml
 
-    # - name: Run dbt debug
-    #   run: dbt debug
+    - name: Run dbt debug
+       run: dbt debug
 
     - name: Run dbt with prod target
       run: dbt run --target prod
