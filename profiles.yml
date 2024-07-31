@@ -10,3 +10,6 @@ highreward_dev_database:
       dbname: high_rewards
       schema: dbt
       sslmode: disable
+      keepalives_idle: 0
+      connect_timeout: 10
+      retries: 1
