@@ -5,7 +5,7 @@ highreward_dev_database:
       type: postgres
       host: localhost
       user: root
-      password: ${{ vars.DB_PASSWORD}}
+      password: ${{ vars.DB_PASSWORD }}
       port: 5433
       dbname: dev_high_rewards
       schema: dbt
