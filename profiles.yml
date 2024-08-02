@@ -5,7 +5,7 @@ highreward_dev_database:
       type: postgres
       host: localhost
       user: root
-      password: "${{ secrets.DB_PASSWORD_PROD }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
       port: 5433
       dbname: dev_high_rewards
       schema: dbt
@@ -14,7 +14,7 @@ highreward_dev_database:
       type: postgres
       host: localhost
       user: root
-      password: "${{ secrets.DB_PASSWORD_PROD }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
       port: 5433
       dbname: high_rewards
       schema: dbt
