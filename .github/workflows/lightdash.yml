@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
     steps:
     - name: Checkout code
@@ -59,7 +61,7 @@ jobs:
               type: postgres
               host: localhost
               user: root
-              password: ']e-9+FQvc>8HKtCRzN:!uXP#cW5X'
+              password: '${{ secrets.DB_PASSWORD }}'
               port: 5433
               dbname: high_rewards
               schema: dbt
