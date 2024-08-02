@@ -52,7 +52,27 @@ jobs:
     - name: Set up dbt profile
       run: |
         mkdir -p ~/.dbt
-        echo "${{ secrets.DBT_PROFILES_YML }}" > ~/.dbt/profiles.yml
+        echo "highreward_dev_database:
+          target: dev
+          outputs:
+            dev:
+              type: postgres
+              host: localhost
+              user: root
+              password: \"{{ env_var('DB_PASSWORD') }}\"
+              port: 5433
+              dbname: dev_high_rewards
+              schema: dbt
+              sslmode: disable
+            prod:
+              type: postgres
+              host: localhost
+              user: root
+              password: \"{{ env_var('DB_PASSWORD') }}\"
+              port: 5433
+              dbname: high_rewards
+              schema: dbt
+              sslmode: disable" > ~/.dbt/profiles.yml
 
     - name: Run dbt with prod target
       run:  dbt run --target prod
