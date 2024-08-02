@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy-lightdash:
     runs-on: ubuntu-latest
     env:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
