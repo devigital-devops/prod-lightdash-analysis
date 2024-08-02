@@ -8,8 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     env:
       DB_PASSWORD: ${{ env.DB_PASSWORD }} 
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
