@@ -49,7 +49,7 @@ jobs:
         # Check if the port is listening
         nc -zv localhost 5433 || echo "Failed to connect to SSH tunnel"
     - name: Debug Secrets
-      run: echo "DB_PASSWORD=${DB_PASSWORD}"
+      run: echo "DB_PASSWORD"=${DB_PASSWORD}
       
     - name: Set up dbt profile
       run: |
