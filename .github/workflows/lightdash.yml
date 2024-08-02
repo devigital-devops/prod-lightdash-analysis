@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      DB_PASSWORD: ${{ env.DB_PASSWORD }} 
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }} 
 
     steps:
     - name: Checkout code
