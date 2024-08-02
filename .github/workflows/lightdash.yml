@@ -59,7 +59,7 @@ jobs:
               type: postgres
               host: localhost
               user: root
-              password: "${{ secrets.DB_PASSWORD }}"
+              password:  \"${{ secrets.DB_PASSWORD }}\"
               port: 5433
               dbname: dev_high_rewards
               schema: dbt
@@ -68,7 +68,7 @@ jobs:
               type: postgres
               host: localhost
               user: root
-              password: "${{ secrets.DB_PASSWORD }}"
+              password:  \"${{ secrets.DB_PASSWORD }}\"
               port: 5433
               dbname: high_rewards
               schema: dbt
