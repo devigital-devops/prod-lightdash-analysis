@@ -26,7 +26,7 @@ jobs:
 
     - name: Install Lightdash CLI
       run: |
-        npm install -g @lightdash/cli@latest
+        npm install -g @lightdash/cli@0.1200.2
         
     - name: Install dependencies
       run: |
