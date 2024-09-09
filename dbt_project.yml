@@ -24,3 +24,4 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   highreward_dev_database:
     +materialized: table
+#testing
